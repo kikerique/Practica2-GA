@@ -85,6 +85,24 @@ void enteros()
 	srand(stime);
 	printf("Ingresa el numero de alelos que quieres en tus individuos\n");
 	scanf("%d",&a);
+	int individuos[10][a];
+	for(int i=0;i<10;i++)
+	{
+		for(int j=0;j<a;j++)
+		{
+			individuos[i][j]=rand();
+		}
+	}
+	printf("Individuos creados\n");
+	for(int i=0;i<10;i++)
+	{
+		printf("Individuo %d\n",i+1);
+		for(int j=0;j<a;j++)
+		{
+			printf("%d|",individuos[i][j]);
+		}
+		printf("\n");
+	}
 }
 void reales()
 {
@@ -92,7 +110,25 @@ void reales()
 	ltime=time(NULL);
 	int a,stime;
 	stime=(unsigned)ltime/2;
-	srand(stime);
+	srand48(stime);
 	printf("Ingresa el numero de alelos que quieres en tus individuos\n");
 	scanf("%d",&a);
+	float individuos[10][a];
+	for(int i=0;i<10;i++)
+	{
+		for(int j=0;j<a;j++)
+		{
+			individuos[i][j]=drand48()*(100.0);
+		}
+	}
+	printf("Individuos creados\n");
+	for(int i=0;i<10;i++)
+	{
+		printf("Individuo %d\n",i+1);
+		for(int j=0;j<a;j++)
+		{
+			printf("%f|",individuos[i][j]);
+		}
+		printf("\n");
+	}
 }
